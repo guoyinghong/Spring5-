@@ -1,0 +1,4 @@
+LogMsg: Mon Jul 04 18:22:36 CST 2022 jmx.attribute.change AttributeChangeDetected Name = Name Old value = TEST New value = Rob Harrop
+LogMsg: Mon Jul 04 18:30:22 CST 2022 jmx.attribute.change AttributeChangeDetected Name = Name Old value = TEST New value = Rob Harrop
+LogMsg: Mon Jul 04 22:53:27 CST 2022 jmx.attribute.change AttributeChangeDetected Name = Name Old value = TEST New value = Rob Harrop
+LogMsg: Mon Jul 04 22:55:27 CST 2022 jmx.attribute.change AttributeChangeDetected Name = Name Old value = TEST New value = Rob Harrop

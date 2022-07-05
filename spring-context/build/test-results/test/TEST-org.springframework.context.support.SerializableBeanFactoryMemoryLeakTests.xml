@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.springframework.context.support.SerializableBeanFactoryMemoryLeakTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-07-04T14:55:01" hostname="guoyingongdeMBP" time="0.006">
+  <properties/>
+  <testcase name="abstractRefreshableContext" classname="org.springframework.context.support.SerializableBeanFactoryMemoryLeakTests" time="0.001"/>
+  <testcase name="abstractRefreshableContextWithMisconfiguredBean" classname="org.springframework.context.support.SerializableBeanFactoryMemoryLeakTests" time="0.004"/>
+  <testcase name="genericContextWithMisconfiguredBean" classname="org.springframework.context.support.SerializableBeanFactoryMemoryLeakTests" time="0.0"/>
+  <testcase name="genericContext" classname="org.springframework.context.support.SerializableBeanFactoryMemoryLeakTests" time="0.001"/>
+  <system-out><![CDATA[22:55:01.517 [Test worker] WARN  o.s.c.s.SerializableBeanFactoryMemoryLeakTests$1 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'misconfigured': Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'nonexistent' of bean class [java.lang.Object]: Bean property 'nonexistent' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+22:55:01.518 [Test worker] WARN  o.s.c.s.GenericApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'misconfigured': Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'nonexistent' of bean class [java.lang.Object]: Bean property 'nonexistent' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
