@@ -26,8 +26,8 @@ public class Test2 {
 //		beanDefinition.setScope("singleton");
 //		System.out.println(context.getBean("test"));
 
-		L test = (L) context.getBean("test");
-		L test2 = (L) context.getBean("test");
+		Object test = context.getBean("test");
+		Object test2 = context.getBean("test");
 		System.out.println(test == test2);
 	}
 

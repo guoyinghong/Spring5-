@@ -18,8 +18,14 @@ public class LubanBeanPostProcessor implements BeanFactoryPostProcessor {
 	@Override
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
 		System.out.println("自定义BeanFactoryPostProcessor");
+		//BeanFactoryPostProcessor 可以在bean初始化之前修改bean的一些属性
 //		GenericBeanDefinition beanDefinition = (GenericBeanDefinition) beanFactory.getBeanDefinition("test");
 //		beanDefinition.setScope("prototype");
+
+
+		GenericBeanDefinition beanDefinition = (GenericBeanDefinition) beanFactory.getBeanDefinition("test");
+
+
 
 	}
 }

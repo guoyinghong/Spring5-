@@ -2,25 +2,21 @@ package com.shadow.service;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 /**
  * @author: guoyinghong
  * @date: 2022/7/5 下午3:53
  * @Description:
  **/
 @Component("test")
-public class TestService implements L{
-	@Override
-	public void query() {
-
+public class TestService {
+	public TestService() {
+		System.out.println("constructor");
 	}
 
-	@Override
-	public void query1(String n) {
-
-	}
-
-	@Override
-	public void query2(String n, String m) {
-
+	@PostConstruct
+	public void init(){
+		System.out.println("init");
 	}
 }

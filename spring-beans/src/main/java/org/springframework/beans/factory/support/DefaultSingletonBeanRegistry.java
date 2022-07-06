@@ -219,6 +219,7 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 		synchronized (this.singletonObjects) {
 			Object singletonObject = this.singletonObjects.get(beanName);
 			if (singletonObject == null) {
+				//判断这个对象有没有开始创建
 				if (this.singletonsCurrentlyInDestruction) {
 					throw new BeanCreationNotAllowedException(beanName,
 							"Singleton bean creation not allowed while singletons of this factory are in destruction " +
@@ -234,6 +235,10 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 					this.suppressedExceptions = new LinkedHashSet<>();
 				}
 				try {
+					//这里的singletonFactory.getObject()才会去真正的创建bean
+					//创建对象，但是创建出来就是代理对象
+					//直接创建出来代理对象————不现实
+					//先创建出来原对象，再创建代理对象
 					singletonObject = singletonFactory.getObject();
 					newSingleton = true;
 				}

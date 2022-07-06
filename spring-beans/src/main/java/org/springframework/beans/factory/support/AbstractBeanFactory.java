@@ -258,7 +258,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 		 * 也就是说，Spring在初始化的时候会先获取这个对象，
 		 * 判断这个对象是否已经被实例化好了（普通情况下绝对为空，有一种情况可能不为空）
 		 * 从Spring的bean容器中获取一个bean，由于Spring中bean容器是一个map（singletonObjects），
-		 * 所以你可以理解getSingleton(beanName)等于beanMap.get(beanName)
+		 * 所以你可以理解 getSingleton(beanName)等于beanMap.get(beanName)
 		 *
 		 * 由于方法会在Spring初始化（就是对象被创建的时候）的时候调用一次，在getBean的时候也会调用一次，
 		 * 所以在调试的时候特别注意，断点不能直接打在这里
@@ -269,21 +269,27 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 		 */
 		Object sharedInstance = getSingleton(beanName);
 		if (sharedInstance != null && args == null) {
-			if (logger.isTraceEnabled()) {
-				if (isSingletonCurrentlyInCreation(beanName)) {
-					logger.trace("Returning eagerly cached instance of singleton bean '" + beanName +
-							"' that is not fully initialized yet - a consequence of a circular reference");
-				}
-				else {
-					logger.trace("Returning cached instance of singleton bean '" + beanName + "'");
-				}
-			}
+			//这里的代码是日志记录，方便阅读先注释掉
+//			if (logger.isTraceEnabled()) {
+//				if (isSingletonCurrentlyInCreation(beanName)) {
+//					logger.trace("Returning eagerly cached instance of singleton bean '" + beanName +
+//							"' that is not fully initialized yet - a consequence of a circular reference");
+//				}
+//				else {
+//					logger.trace("Returning cached instance of singleton bean '" + beanName + "'");
+//				}
+//			}
+			/**
+			 *
+			 */
 			bean = getObjectForBeanInstance(sharedInstance, name, beanName, null);
 		}
 
 		else {
 			// Fail if we're already creating this bean instance:
 			// We're assumably within a circular reference.
+			//如果是原型的话不应该在初始化的时候创建。Spring在正在创建一个类的时候会把这个类放到一个list中标志这个类正在创建
+			//
 			if (isPrototypeCurrentlyInCreation(beanName)) {
 				throw new BeanCurrentlyInCreationException(beanName);
 			}
@@ -319,6 +325,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 				checkMergedBeanDefinition(mbd, beanName, args);
 
 				// Guarantee initialization of beans that the current bean depends on.
+//				@DependsOn 注解标注在类的属性上，表示该类的创建依赖于这个属性
 				String[] dependsOn = mbd.getDependsOn();
 				if (dependsOn != null) {
 					for (String dep : dependsOn) {
@@ -339,6 +346,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 
 				// Create bean instance.
 				if (mbd.isSingleton()) {
+					//创建出对象
 					sharedInstance = getSingleton(beanName, () -> {
 						try {
 							return createBean(beanName, mbd, args);
