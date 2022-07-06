@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.springframework.context.expression.CachedExpressionEvaluatorTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-07-04T14:55:07" hostname="guoyingongdeMBP" time="0.005">
-  <properties/>
-  <testcase name="cacheExpressionBasedOnConcreteType" classname="org.springframework.context.expression.CachedExpressionEvaluatorTests" time="0.004"/>
-  <testcase name="parseNewExpression" classname="org.springframework.context.expression.CachedExpressionEvaluatorTests" time="0.001"/>
-  <testcase name="cacheExpression" classname="org.springframework.context.expression.CachedExpressionEvaluatorTests" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
