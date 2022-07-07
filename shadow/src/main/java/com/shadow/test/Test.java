@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Test {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext ac =new AnnotationConfigApplicationContext(AppConfig.class);
-		ac.getBean(TestDao.class).dao();
+		ac.getBean(TestDao.class).query();
 
 		//目标对象被代理了，它在什么时候被代理了  初始化的时候就被代理了
 		//目标对象哪里去了

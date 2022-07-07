@@ -1,5 +1,8 @@
 package com.shadow.spring;
 
+import com.shadow.service.CityService;
+import com.shadow.service.HomeService;
+import com.shadow.service.TestService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
@@ -7,6 +10,8 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.stereotype.Component;
+
+import java.lang.reflect.Field;
 
 /**
  * @author: guoyinghong
@@ -23,7 +28,22 @@ public class LubanBeanPostProcessor implements BeanFactoryPostProcessor {
 //		beanDefinition.setScope("prototype");
 
 
-		GenericBeanDefinition beanDefinition = (GenericBeanDefinition) beanFactory.getBeanDefinition("test");
+		GenericBeanDefinition beanDefinition = (GenericBeanDefinition) beanFactory.getBeanDefinition("orderService");
+		System.out.println("AutowireMode:"+beanDefinition.getAutowireMode());
+//		beanDefinition.setAutowireMode(3);//AUTOWIRE_CONSTRUCTOR
+		beanDefinition.setAutowireMode(1);//AUTOWIRE_BY_NAME
+
+		/**
+		 * 如果有@Autowired注解,默认是通过反射进行自动装配的，和set方法无关
+		 */
+//		try {
+//			TestService testService = new TestService();
+//			HomeService homeService = new HomeService();
+//			Field field  = TestService.class.getField("homeService");
+//			field.set(testService,homeService);
+//		} catch (NoSuchFieldException | IllegalAccessException e) {
+//			e.printStackTrace();
+//		}
 
 
 
