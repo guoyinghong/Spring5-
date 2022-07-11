@@ -51,7 +51,7 @@ buildSrc/src/test/
 shadow/build/generated/
 shadow/build/tmp/
 shadow/src/main/kotlin/
-shadow/src/main/resources/
+#shadow/src/main/resources/
 shadow/src/test/
 spring-aop/src/main/kotlin/
 spring-aop/src/test/kotlin/
