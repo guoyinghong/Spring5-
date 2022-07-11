@@ -1,6 +1,7 @@
 package com.shadow.service;
 
 import com.shadow.test.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -32,7 +33,7 @@ public class OrderService {
 
 
 
-	//	@Autowired //@Autowired 是不需要该属性的set方法的，Spring是通过反射进行装配的
+//		@Autowired //@Autowired 是不需要该属性的set方法的，Spring是通过反射进行装配的
 	HomeService homeService;
 
 	public HomeService getHomeService() {

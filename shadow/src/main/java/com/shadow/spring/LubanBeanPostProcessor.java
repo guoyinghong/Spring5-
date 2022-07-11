@@ -30,8 +30,9 @@ public class LubanBeanPostProcessor implements BeanFactoryPostProcessor {
 
 		GenericBeanDefinition beanDefinition = (GenericBeanDefinition) beanFactory.getBeanDefinition("orderService");
 		System.out.println("AutowireMode:"+beanDefinition.getAutowireMode());
-//		beanDefinition.setAutowireMode(3);//AUTOWIRE_CONSTRUCTOR
-		beanDefinition.setAutowireMode(1);//AUTOWIRE_BY_NAME
+		//设置为3时，会去找公共方法中参数最多，并且每个参数都在Spring容器中的构造方法
+		beanDefinition.setAutowireMode(3);//AUTOWIRE_CONSTRUCTOR
+//		beanDefinition.setAutowireMode(1);//AUTOWIRE_BY_NAME
 
 		/**
 		 * 如果有@Autowired注解,默认是通过反射进行自动装配的，和set方法无关

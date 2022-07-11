@@ -1,12 +1,16 @@
 package com.shadow.test;
 
 import com.shadow.AppConfig;
+import com.shadow.dao.TestDao;
 import com.shadow.service.HomeService;
 import com.shadow.service.L;
 import com.shadow.service.OrderService;
 import com.shadow.service.TestService;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.lang.reflect.Proxy;
 
 /**
  * @author: guoyinghong
@@ -34,14 +38,8 @@ public class Test2 {
 
 
 		//可以打印
-//		System.out.println(context.getBean(OrderService.class).getHomeService());
+		System.out.println(context.getBean(OrderService.class).getHomeService());
 
-
-		//这种方法为什么mybatis不用
-//		context.getBeanFactory().registerSingleton("",);
-
-
-		context.getBean(TestService.class).query();
 	}
 
 }

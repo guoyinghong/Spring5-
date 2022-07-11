@@ -18,7 +18,7 @@ public class TestService
 //implements InitializingBean
 {
 	public TestService() {
-		System.out.println("constructor");
+//		System.out.println("TestService constructor");
 	}
 
 	/**

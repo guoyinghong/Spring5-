@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component("c")
 public class CityService implements L{
 	public CityService() {
-		System.out.println("CityService构造器！！！观察目标对象被创建");
+//		System.out.println("CityService构造器！！！观察目标对象被创建");
 
 	}
 
