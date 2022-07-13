@@ -13,26 +13,28 @@ import javax.annotation.PreDestroy;
  * @date: 2022/7/5 下午3:53
  * @Description:
  **/
-@Component
+@Component("test")
 public class TestService
-//implements InitializingBean
+implements InitializingBean
 {
 	public TestService() {
-//		System.out.println("TestService constructor");
+		System.out.println("TestService constructor");
 	}
 
 	/**
 	 * initialization callback和destruction callback 组成了Spring的 lifestyle callbacks
 	 */
-//	@PostConstruct  生命周期回调 lifestyle callback
+//	@PostConstruct  //生命周期回调 lifestyle callback
 	public void init(){
-		System.out.println("init");
+		System.out.println("@PostConstruct TestService init");
 	}
 
-//	@Override //生命周期回调第二种方法 实现InitializingBean
+	@Override //生命周期回调第二种方法 实现InitializingBean
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("init afterPropertiesSet");
+		System.out.println("afterPropertiesSet()  TestService init ");
 	}
+
+	//生命周期回调第三种方法：通过XML配置
 
 	//@PreDestroy    销毁（context.close）的时候执行
 	public void preDestroy(){

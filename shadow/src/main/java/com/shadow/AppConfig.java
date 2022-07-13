@@ -12,8 +12,10 @@ import javax.sql.DataSource;
 
 @Configurable
 @ComponentScan("com.shadow")
-@EnableAspectJAutoProxy
-@MapperScan("com.shadow.dao")  //扫描mapper映射器
+@GyhScan
+
+//@EnableAspectJAutoProxy
+//@MapperScan("com.shadow.dao")  //扫描mapper映射器
 //@EnableAspectJAutoProxy(proxyTargetClass = true)   //代理cglib，使用继承实现的代理
 public class AppConfig {
 

@@ -18,7 +18,7 @@ import java.lang.reflect.Field;
  * @date: 2022/7/5 下午4:04
  * @Description:
  **/
-@Component
+//@Component
 public class LubanBeanPostProcessor implements BeanFactoryPostProcessor {
 	@Override
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {

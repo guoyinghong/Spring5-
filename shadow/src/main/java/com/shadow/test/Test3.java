@@ -16,22 +16,26 @@ import java.lang.reflect.Proxy;
 public class Test3 {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-		context.getBean(TestService.class);
+//		context.getBean(TestService.class);
 
 		//模拟mybatis
 		TestDao testDao = (TestDao) Proxy.
 				newProxyInstance(Test2.class.getClassLoader(), new Class[]{TestDao.class}, new GyhInvocationHandler());
 
-//		testDao.query();
+		testDao.query();
 
 		//这种方法为什么mybatis不用
-//		context.getBeanFactory().registerSingleton("",testDao);
+//		UserController controller = new UserController() ;
+//		context.getBeanFactory().registerSingleton("userController",controller);
 
 
 		//看看mybatis源码
 //		SqlSession sqlSession = null;
 //		TestDao testDao = sqlSession.getMapper(TestDao.class);
-//
+
+		//测试FactoryBean注入Spring
+		context.getBean(TestDao.class).query();
+
 
 	}
 }

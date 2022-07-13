@@ -32,13 +32,13 @@ public class Test2 {
 //		beanDefinition.setScope("singleton");
 //		System.out.println(context.getBean("test"));
 
-//		Object test = context.getBean("testService");
+		Object test = context.getBean("test");
 //		Object test2 = context.getBean("testService");
 //		System.out.println(test == test2);
 
 
 		//可以打印
-		System.out.println(context.getBean(OrderService.class).getHomeService());
+//		System.out.println(context.getBean(OrderService.class).getHomeService());
 
 	}
 

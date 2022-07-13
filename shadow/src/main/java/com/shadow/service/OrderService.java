@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @date: 2022/7/6 下午5:17
  * @Description:
  **/
-@Component
+//@Component
 public class OrderService {
 	/**
 	 * beanDefinition.setAutowireMode(0);//AUTOWIRE_NO
